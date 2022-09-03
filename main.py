@@ -44,5 +44,13 @@ def scan():
     return {'hasil': str(res)}
 
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+@app.route('/scanPort', methods=['POST'])
+def scanPort():
+    url = request.form['domain']
+    carikan = api.Garuda()
+    port = carikan.portScanner(url)
+    return {'port': str(port)}
+
+
+if __name__ == '__main__':
+    app.run(debug=True)
