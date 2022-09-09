@@ -33,6 +33,7 @@ def cari():
     else:
         res = carikan.scrap(query=kata)
     jumlah = len(res['results'])
+    # fix url encode
     return render_template('cari.html', about=about(), hasil=res, jumlah=jumlah, kata=quote_plus(kata, safe=""), kataplaceholder=kata)
 
 
