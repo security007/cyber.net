@@ -4,7 +4,7 @@ Cyber.Net is a search engine that can detect web technologies and website info. 
 
 ## Installation
 
-Python
+Linux
 
 ```bash
 pip install -r requirements.txt
