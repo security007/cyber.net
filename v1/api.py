@@ -8,7 +8,7 @@ import socket
 
 class Garuda:
     def __init__(self):
-        self.__version = "1.0.0"
+        self.__version = "2.1.0"
         self.__database = "https://www.bing.com/search?q="
         self.__useragent = "Garuda/{} AppleWebKit/537.36 (KHTML, like Gecko) Garuda/103.0.0.0 NKRI/537.36".format(
             self.__version)

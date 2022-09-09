@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, jsonify, abort, Response
 from v1 import api
-from urllib.parse import unquote, urlparse, urlunparse, quote, quote_plus
+from urllib.parse import unquote, urlparse, urlunparse, quote, quote_plus, unquote_plus
 import requests
 import base64
 
@@ -10,7 +10,7 @@ app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 
 
 def about():
-    __version = "1.0.0"
+    __version = "2.1.0"
     __author = "security007"
     __email = "defacementsec007@gmail.com"
     return {'version': __version, 'author': __author, 'email': __email}
@@ -33,7 +33,7 @@ def cari():
     else:
         res = carikan.scrap(query=kata)
     jumlah = len(res['results'])
-    return render_template('cari.html', about=about(), hasil=res, jumlah=jumlah, kata=quote_plus(quote(kata, safe="")), kataplaceholder=unquote(kata))
+    return render_template('cari.html', about=about(), hasil=res, jumlah=jumlah, kata=quote_plus(kata, safe=""), kataplaceholder=kata)
 
 
 @app.route('/scan', methods=['POST'])
