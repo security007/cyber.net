@@ -4,7 +4,7 @@ from Wappalyzer import Wappalyzer, WebPage
 from urllib.parse import urlparse, parse_qs
 import base64
 import socket
-
+# Fix url encode
 
 class Garuda:
     def __init__(self):
